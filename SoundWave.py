@@ -18,7 +18,6 @@ import pyaudio
 import numpy as np
 from matplotlib import pyplot as plt
 import pandas as pd
-import pandas as pd
 import os
 
 
@@ -73,27 +72,6 @@ def collectaudio():
     return(pos_freq[::5], pos_fft_data[::5])
 
 
-# Initialise dataframe
-df = pd.DataFrame(columns = list(range(50,605,5)))
-df["note"] = []
-
-
-# Start data collection process
-inp = (input("Press enter to start: "))
-
-while inp == "":
-    m = collectaudio()
-
-    note = input("What note was that?: ").lower()
-    if len(note) == 1 and ord(note) >= 97 and ord(note) <= 103:
-        df.loc[len(df)] = np.append(m[1], np.array([int(ord(note))]))
-
-    else:
-        print("Invalid Entry.")
-
-    inp = (input("Press enter to continue, type -1 to exit: "))
-
-
 def write_to_excel(df, filename):
     if os.path.exists(filename):
         # If file exists, load existing data and append the new data
@@ -104,7 +82,31 @@ def write_to_excel(df, filename):
     with pd.ExcelWriter(filename, engine='openpyxl') as writer:
         df.to_excel(writer, index=False)
 
-filename = "notes.xlsx"
+# Initialise dataframe
 
-write_to_excel(df, filename)
+if __name__ == "__main__":
+    df = pd.DataFrame(columns = list(range(50,605,5)))
+    df["note"] = []
+
+
+    # Start data collection process
+    inp = (input("Press enter to start: "))
+
+    while inp == "":
+        m = collectaudio()
+
+        note = input("What note was that?: ").lower()
+        if len(note) == 1 and ord(note) >= 97 and ord(note) <= 103:
+            df.loc[len(df)] = np.append(m[1], np.array([int(ord(note))]))
+
+        else:
+            print("Invalid Entry.")
+
+        inp = (input("Press enter to continue, type -1 to exit: "))
+
+
+
+    filename = "notes.xlsx"
+
+    write_to_excel(df, filename)
 
