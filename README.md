@@ -13,7 +13,7 @@ That is because I would prefer not to use an invasive procedure to get these sig
 However, the equipment that I might need for this project is immensely expensive, meaning that I need to be REALLY sure it works. For that I am starting off by just working with sound waves. I will create a database that will take single note sounds as input and return a note.
 The catch is that I will not directly be relying on the frequency of the note being played because my EEG signals wont have specified frequencies like that, or so I presume.
 
-### SoundWave and SoundTest
+### SoundWave.py and SoundTest.py
 These files are the preliminary tests I did to see if my idea holds any water at all. SoundWave.py collects audio from the user's mic and asks the user for the note that was played. This was to make a dataset that the ML model could be trained on.
 SoundTest.py takes this database and tests is out. In its current version, the program does not actually use the testing data and directly asks user for an audio input and determines the note played, so it is less of a test and more of an actual implementaiton in a way?
 
@@ -22,3 +22,6 @@ Anyway the idea worked, I can FFT sound waves and use their data to make a ML mo
 
 ## Stage 2: Figuring the car mobility out
 I am still a tad afraid of how expensive these EEG machines are so I will take another baby step first and try and have the car run with my voice as opposed to brain waves. Sound is still very much a wave so the idea still stands, I just wont have to give away my entire life savings just yet.
+
+### CarRunner.ino and AudioCar.py
+Not much to say here, it worked.
