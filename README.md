@@ -17,4 +17,4 @@ The catch is that I will not directly be relying on the frequency of the note be
 These files are the preliminary tests I did to see if my idea holds any water at all. SoundWave.py collects audio from the user's mic and asks the user for the note that was played. This was to make a dataset that the ML model could be trained on.
 SoundTest.py takes this database and tests is out. In its current version, the program does not actually use the testing data and directly asks user for an audio input and determines the note played, so it is less of a test and more of an actual implementaiton in a way?
 
-Anyway the idea worked, I can fFt sound waves and use their data to make a ML model that can predict what the audio is doing. I can now move on to the pricier part of the project.
+Anyway the idea worked, I can FFT sound waves and use their data to make a ML model that can predict what the audio is doing. I can now move on to the pricier part of the project.
