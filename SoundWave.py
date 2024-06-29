@@ -2,7 +2,16 @@
 Author: Navjot Saroa
 The purpose of this file is to help me create a database, in a quick manner.
 The program will wait for a user input of sound. Carry out FFT, return frequencies and their amplitudes.
-After that the user will be asked what note was just played, and that data will be stored."""
+After that the user will be asked what note was just played, and that data will be stored.
+
+The dataset will also be included in the repo, it is a collection of notes either sung or played on some sort of instrument.
+I have mostly kept the sounds to the 3rd octave and the notes are represented by their ASCII values.
+
+Do note that the code is recording frequencies between 0Hz and 600Hz but I have narrowed the dataset down to between 100Hz and 400Hz.
+This is to make the dataset a bit smaller and easier to work with, and the 3rd octave only ranges between 130Hz and 260Hz so realistically 
+I could make that range narrower but I wanted to make the life of the program a little harder for fun, also because my excel was being weird 
+and stored data for frequencies out of that range weirdly...
+"""
 
 
 import pyaudio
