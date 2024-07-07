@@ -25,3 +25,9 @@ I am still a tad afraid of how expensive these EEG machines are so I will take a
 
 ### CarRunner.ino and AudioCar.py
 Not much to say here, it worked.
+
+
+
+
+
+### This project has been abandoned because the EEG equipment is far too expensive, I may come back to it if I receive funding for it.
